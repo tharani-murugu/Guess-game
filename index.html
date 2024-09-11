@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <div class="guess">
+    <h1> Guess The Number</h1>
+        <input id="guessnumber">
+        <button onclick="check()" >Chech</button>
+        <p id="result">You Are  Wrong/Right</p>
+        <p id="score">Score:10</p>
+        <img id="smile" src="images-removebg-preview.png">
+    </div>
+</div>
+<style>
+    .container{
+        background-color: rgb(197, 248, 248);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        padding: 3%;
+    }
+    .container h1{
+        text-align: center;
+        padding-top: 1%;
+        padding-bottom: 2%;
+        font-size: 50px;
+    }
+    .guess{
+        width: 80%;
+        align-content: center;
+        background-color: rgb(197, 248, 248);
+    }
+    .guess p{
+        font-size: 25px;
+    }
+    .guess button{
+        background-color: blue;
+        height: 50%;
+        width: 10%;
+        font-size: 20px;
+        color: white;
+        font-weight: bold;
+        border-color: blue;
+    }
+    #score{
+        color: brown;
+    }
+    .guess img{
+        display: none;
+    }
+    
+</style>
+
+  <script>
+    var image1=document.getElementById("smile")
+    //console.log(image1)
+    var guessnumber=document.getElementById("guessnumber")
+    var result=document.getElementById("result")
+    var scoretotal=document.getElementById("score")
+    var randomNumber=Math.floor(Math.floor(Math.random()*10))+1
+    var scoretotal=10
+    function check(){
+        var enterednumber=guessnumber.value
+        if(randomNumber==enterednumber)
+            {
+               
+                alert("YOU WON...")
+                //console.log(image1)
+                 image1.style.display="block"
+                result.textContent="Right"  
+            }
+            else
+            {
+                scoretotal=scoretotal-1
+                score.textContent="Score:"+scoretotal
+                result.textContent="Wrong"
+            }
+    }
+  </script>
+
+</body>
+</html>
